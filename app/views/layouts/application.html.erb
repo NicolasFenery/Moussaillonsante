@@ -28,12 +28,18 @@
           <li class="nav-item">
             <a class="nav-link text-info" href="<% contact_index_path %>">Team</a>
           </li>
+          <% if logged_in? %>
           <li class="nav-item">
-            <a class="btn btn-outline-info text-info mr-2" href="<%  %>">Inscription</a>
+            <%= link_to "Déconnexion", session_path('id'), method: :delete, class: "btn btn-info text-white" %>
+          </li>
+          <% else %>
+          <li class="nav-item">
+            <%= link_to "Inscription", new_user_path, class: "btn btn-outline-info text-info mr-2" %>
           </li>
           <li class="nav-item">
-            <a class="btn btn-info text-white" href="<%  %>">Connexion</a>
+            <%= link_to "Connexion", new_session_path, class: "btn btn-info text-white" %> 
           </li>
+          <% end %> 
         </ul>
       </div>
     </div>

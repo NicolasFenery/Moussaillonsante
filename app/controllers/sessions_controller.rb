@@ -7,11 +7,12 @@ class SessionsController < ApplicationController
 		user = User.find_by(email: params[:email])
 
 		if user && user.authenticate(params[:password])
-			cookies[:user_id] = user.user_id
+			session[:user_id] = user.id
 			redirect_to root_path
 		else
-			flash.now[:danger] = 'Le mot de pass ne correspond pas au mail'
+			flash.now[:danger] = 'Le mot de passe ne correspond pas au mail'
 			render 'new'
+		end
 	end
 
 	def destroy
