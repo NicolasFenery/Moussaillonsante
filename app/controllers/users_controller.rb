@@ -4,10 +4,10 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(name: params [:name], email: params[:email], password:[:password])
+    @user = User.create(name: params[:name], email: params[:email], password: params[:password])
 
     if @user.save
-      redirect_to rooth_path
+      redirect_to root_path
     else
       render 'new'
       end

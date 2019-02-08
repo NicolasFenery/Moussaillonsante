@@ -1,2 +1,18 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="mx-auto mt-3 py-3" style="width: 600px;">
+<h1>Profil Utilisateur</h1>
+</div>
+
+<div class="mx-auto py-3" style="width: 600px;">
+<table class="table">
+  <tbody>
+    <tr>
+      <th scope="row">Prénom</th>
+      <td><%= @user.name %></td>
+    </tr>
+     <tr>
+      <th scope="row">Mail</th>
+      <td><%= @user.email %></td>
+    </tr>
+  </tbody>
+</table>
+</div>
